@@ -12,9 +12,10 @@ describe('index page', function() {
     this.browser.visit('/', done);
   });
 
-  it('should show a submit request button', function(){
+  it('should display static elements', function(){
     assert.ok(this.browser.success);
     this.browser.assert.element('.submit-button');
+    this.browser.assert.text('.title', 'Transaction Viewer');
   });
 
   it('should show a response box and text when submit clicked', function(){
@@ -28,8 +29,11 @@ describe('index page', function() {
   });
 
   it('should clear the response box when the background is clicked', function(){
+    var browser = this.browser;
     this.browser.pressButton('.submit-button');
     this.browser.click('.background');
-    this.browser.assert.style('.response-box', 'display', 'none');
+    this.browser.wait().then( function() {
+      browser.assert.style('.response-box', 'display', 'none');
+    }, 5000);
   })
 });

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon app.js",
-    "test": "jasmine-node spec --verbose"
+    "test": "mocha test"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -15,7 +15,6 @@
     "express-useragent": "^1.0.4",
     "geolocation": "^0.2.0",
     "jade": "~1.11.0",
-    "jasmine-node": "^1.14.5",
     "moment": "^2.15.1",
     "morgan": "~1.7.0",
     "nodemon": "^1.11.0",
@@ -24,5 +23,9 @@
     "supertest": "^2.0.1",
     "tape": "^4.6.2",
     "zombie": "^4.2.1"
+  },
+  "devDependencies": {
+    "should": "^11.1.1",
+    "supertest": "^2.0.1"
   }
 }

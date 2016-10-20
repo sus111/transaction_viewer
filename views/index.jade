@@ -2,14 +2,13 @@ extends layout
 
 block content
   div(class='background')
-    h1 Transaction Viewer
+    h1(class='title') Transaction Viewer
     div
       button(class='submit-button') Submit Request
       div(class='response-box')
   script(src="/scripts/moment/moment.js")
   script(src= "/scripts/express-useragent/lib/express-useragent.js")
-  script(src="javascripts/constants.js")
+  script(src="javascripts/userObject.js")
   script(src="javascripts/transactionRequest.js")
   script(src="javascripts/controller.js")
   script(src="javascripts/helperMethods.js")
-  script(src="javascripts/userObject.js")

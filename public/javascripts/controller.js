@@ -1,21 +1,26 @@
-var Constants = this.constants;
-var c = new Constants();
+var background = document.querySelector('.background');
+var disabledState = document.createAttribute('disabled');
+var responseBox = document.querySelector('.response-box');
+var status = document.querySelector('.status');
+var submitButton = document.querySelector('.submit-button');
 
-c.submitButton.addEventListener('click', function(){
+
+submitButton.addEventListener('click', function(){
   removeStatus();
-  c.responseBox.style.visibility = "hidden";
-  c.submitButton.setAttributeNode(c.disabledState);
-  c.submitButton.textContent = 'Submitting...';
-  var userData = getLocation(sendObject);
+  responseBox.style.visibility = "hidden";
+  submitButton.setAttributeNode(disabledState);
+  submitButton.textContent = 'Submitting...';
+  var userData = TransactionRequest.getLocation(TransactionRequest.sendObject);
 });
 
-c.background.addEventListener('click', function (event) {
-  if (event.target !== c.submitButton && event.target !==
-    c.responseBox) {c.responseBox.style.visibility = "hidden";
+background.addEventListener('click', function (event) {
+  if (event.target !== submitButton && event.target !==
+    responseBox) {responseBox.style.visibility = "hidden";
     removeStatus();
   }
 });
 
 function removeStatus(){
-  if(c.status){c.responseBox.removeChild(c.status)};
+  var status = document.querySelector('.status');
+  if(status){responseBox.removeChild(status)};
 }

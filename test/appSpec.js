@@ -1,39 +1,46 @@
-var request = require('request');
-var base_url = "http://localhost:3000/"
+var supertest = require("supertest");
+var should = require("should");
+var server = supertest.agent("http://localhost:3000");
 
-describe("Express Server", function() {
+describe("GET '/' request",function(){
 
-  describe("GET /", function() {
-    it("returns status code 200", function() {
-      request.get(base_url, function(req, res) {
-        expect(response.statusCode).toBe(200);
-        done();
-      });
+  it("should display index page",function(done){
+    server.get("/")
+    .expect("Content-type",/json/)
+    .expect(200)
+    .end(function(err,res){
+      res.status.should.equal(200);
+      done();
     });
-
-    it("useragent info is sent in request", function() {
-      request.get(base_url, function(req, res) {
-        expect(req.useragent).toBe(true);
-        done();
-      });
-    });
-
   });
 
-  describe("POST /", function() {
-    it("returns status code 200", function() {
-      request.post(base_url + 'transaction', function(req, res) {
-        expect(response.statusCode).toBe(200);
-        done();
-      });
+  it("should send useragent info in request", function(done) {
+    server.get("/")
+    .end(function(req, res){
+      res.body.should.be.an.instanceOf(Object);
+      done();
     });
+  });
 
-    it("sends a json object", function() {
-      request.post(base_url + 'transaction', function(req, res) {
-        var object = {'status': 'status'};
-        expect(res.json).to.equal(object);
-        done();
-      });
+});
+
+describe("POST '/transaction' request",function(){
+
+  it("should display index page",function(done){
+    server.post("/transaction")
+    .expect("Content-type",/json/)
+    .expect(200)
+    .end(function(err,res){
+      res.status.should.equal(200);
+      done();
+    });
+  });
+
+  it("should send useragent info in request", function(done) {
+    server.post("/transaction")
+    .end(function(req, res){
+      res.body.should.be.an.instanceOf(Object);
+      done();
     });
   });
 

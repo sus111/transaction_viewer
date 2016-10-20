@@ -9,7 +9,8 @@ body {
 
 .background {
   align-items: center;
-  background-image: linear-gradient(135deg, #008f4c 5%, #03a75a 30%, rgba(6, 198, 107, 0.88) 40%, rgba(10, 230, 126, 0.76) 70%, rgba(33, 150, 243, 0.6) 100%);
+  background-image: linear-gradient(135deg, #008f4c 5%, #03a75a 30%,
+    rgba(6, 198, 107, 0.88) 40%, rgba(10, 230, 126, 0.76) 70%, rgba(33, 150, 243, 0.6) 100%);
   display: flex;
   flex-direction: column;
   height: 100vh;

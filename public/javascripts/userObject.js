@@ -1,9 +1,14 @@
+var userAgent = new UserAgent().parse(navigator.userAgent);
+var transactionTypes = ['login', 'payment'];
+var userIDs = ['mr_blonde', 'jules_winnfield', 'django', 'jBrown',
+'v_vega', 'bill', 'ordell_robbie', 'clarence_w', 'mia_w'];
+
 function userObject(position) {
 
   var userRequest = {
-    userID: c.userIDs[randomise(c.userIDs)],
+    userID: userIDs[randomise(userIDs)],
       transaction: {
-        type: c.transactionTypes[randomise(c.transactionTypes)],
+        type: transactionTypes[randomise(transactionTypes)],
         time: moment().format()
       },
       location: {
@@ -11,9 +16,9 @@ function userObject(position) {
         longitude: position.coords.longitude
       },
       device: {
-        browser: c.userAgent.browser,
-        os: c.userAgent.os,
-        platform: c.userAgent.platform
+        browser: userAgent.browser,
+        os: userAgent.os,
+        platform: userAgent.platform
       }
     }
   return JSON.stringify(userRequest);
