@@ -1,28 +1,21 @@
-/*body {
-  background-color: #eceeef;
-
-  padding: 50px;
-  text-align: center;
-}*/
 body {
-  margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url('https://www.callsign.com/wp-content/themes/Callsign-2016-v1.2/img/pinscreen-office-365.jpg');
-  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 .background {
-
   align-items: center;
   background-image: linear-gradient(135deg, #008f4c 5%, #03a75a 30%, rgba(6, 198, 107, 0.88) 40%, rgba(10, 230, 126, 0.76) 70%, rgba(33, 150, 243, 0.6) 100%);
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
   justify-content: center;
   text-align: center;
+  width: 100vw;
 }
 
 h1 {
@@ -50,7 +43,6 @@ h1 {
   text-transform: uppercase;;
 }
 
-
 .submit-button:hover {
   background-color: #2d7a99;
   background-image:none;
@@ -64,9 +56,7 @@ h1 {
   width: 25%;
   min-width: 100%;
   height: 5em;
-
 }
-
 
 .status {
   margin: 2em;
