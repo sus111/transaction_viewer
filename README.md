@@ -1,4 +1,4 @@
-## Callsign Task - Transaction Viewer
+## Transaction Viewer
 <br>
 The front-end of this app is written in Javascript, without any frameworks or libraries like JQuery, and the back-end is in Node and Express.
 
